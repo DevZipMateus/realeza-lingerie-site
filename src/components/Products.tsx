@@ -1,4 +1,8 @@
 import { Heart, Sparkles, Baby, Users } from 'lucide-react';
+import productLingerie from '@/assets/product-lingerie.jpg';
+import productSensual from '@/assets/product-sensual.jpg';
+import productWellness from '@/assets/product-wellness.jpg';
+import productKids from '@/assets/product-kids.jpg';
 
 const Products = () => {
   const categories = [
@@ -6,25 +10,25 @@ const Products = () => {
       icon: Heart,
       title: 'Lingeries',
       items: ['Sutiãs', 'Calcinhas', 'Conjuntos', 'Bodies'],
-      color: 'from-primary/20 to-primary/5',
+      image: productLingerie,
     },
     {
       icon: Sparkles,
       title: 'Linha sensual',
       items: ['Sutiãs sexy', 'Camisolas', 'Fantasias', 'Acessórios'],
-      color: 'from-secondary/20 to-secondary/5',
+      image: productSensual,
     },
     {
       icon: Users,
       title: 'Sex shop',
       items: ['Lubrificantes', 'Sabonete íntimo', 'Próteses', 'Vibradores'],
-      color: 'from-primary/15 to-primary/5',
+      image: productWellness,
     },
     {
       icon: Baby,
       title: 'Linha infantil e juvenil',
       items: ['Calcinhas infantis', 'Tops juvenis', 'Conjuntos', 'Acessórios'],
-      color: 'from-pink-light to-white',
+      image: productKids,
     },
   ];
 
@@ -49,14 +53,24 @@ const Products = () => {
               key={index}
               className="group bg-card rounded-2xl overflow-hidden card-hover border border-border"
             >
-              {/* Header */}
-              <div className={`bg-gradient-to-br ${category.color} p-8 text-center`}>
-                <div className="w-16 h-16 rounded-full bg-background/80 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <category.icon className="w-8 h-8 text-primary" />
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={category.image}
+                  alt={`Categoria ${category.title}`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center">
+                      <category.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold text-white">
+                      {category.title}
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-foreground">
-                  {category.title}
-                </h3>
               </div>
 
               {/* Items */}
