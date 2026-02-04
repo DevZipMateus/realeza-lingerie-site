@@ -1,4 +1,5 @@
 import { Heart, Eye, Star, Users, Shield, Sparkles, TrendingUp } from 'lucide-react';
+import aboutImage from '@/assets/about-image.jpg';
 
 const About = () => {
   const values = [
@@ -40,33 +41,45 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-muted rounded-2xl p-8 md:p-12">
-            <div className="space-y-8">
-              {/* Mission */}
-              <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Heart className="w-5 h-5 text-primary" />
-                  </div>
-                  <h4 className="text-xl font-heading font-semibold text-foreground">Missão</h4>
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Realçar a beleza e a sensualidade de cada mulher através de lingeries confortáveis, modernas e de qualidade, proporcionando confiança, autoestima e uma experiência de compra acolhedora e especial.
-                </p>
-              </div>
+          {/* Store Image */}
+          <div className="relative">
+            <img
+              src={aboutImage}
+              alt="Interior da loja Sexy Lingerie Realeza"
+              className="rounded-2xl shadow-lg w-full h-auto object-cover"
+            />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10" />
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl -z-10" />
+          </div>
+        </div>
 
-              {/* Vision */}
-              <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Eye className="w-5 h-5 text-primary" />
-                  </div>
-                  <h4 className="text-xl font-heading font-semibold text-foreground">Visão</h4>
+        {/* Mission & Vision */}
+        <div className="bg-muted rounded-2xl p-8 md:p-12 mb-20">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Mission */}
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-primary" />
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Ser uma loja referência em lingerie, reconhecida pelo estilo, variedade e atendimento diferenciado, ajudando mulheres a se sentirem mais seguras, poderosas e confiantes todos os dias.
-                </p>
+                <h4 className="text-xl font-heading font-semibold text-foreground">Missão</h4>
               </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Realçar a beleza e a sensualidade de cada mulher através de lingeries confortáveis, modernas e de qualidade, proporcionando confiança, autoestima e uma experiência de compra acolhedora e especial.
+              </p>
+            </div>
+
+            {/* Vision */}
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Eye className="w-5 h-5 text-primary" />
+                </div>
+                <h4 className="text-xl font-heading font-semibold text-foreground">Visão</h4>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Ser uma loja referência em lingerie, reconhecida pelo estilo, variedade e atendimento diferenciado, ajudando mulheres a se sentirem mais seguras, poderosas e confiantes todos os dias.
+              </p>
             </div>
           </div>
         </div>
