@@ -13,7 +13,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="Sexy Lingerie Realeza"
-              className="h-16 w-auto mb-4 brightness-0 invert"
+              className="h-16 w-auto mb-4"
             />
             <p className="text-secondary-foreground/70 text-sm leading-relaxed max-w-md">
               Realçando a beleza e a sensualidade de cada mulher através de lingeries confortáveis, modernas e de qualidade. Seu segredo mais feminino!
