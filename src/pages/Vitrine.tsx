@@ -1,6 +1,22 @@
+import { useEffect } from 'react';
 import Header from '@/components/Header';
 
 const Vitrine = () => {
+  // Esconde o badge do MonteSite apenas nesta página
+  useEffect(() => {
+    const badge = document.getElementById('montesite-footer-badge');
+    if (badge) {
+      badge.style.display = 'none';
+    }
+    
+    // Restaura o badge quando sair da página
+    return () => {
+      if (badge) {
+        badge.style.display = 'block';
+      }
+    };
+  }, []);
+
   return (
     <div className="h-screen w-full overflow-hidden flex flex-col">
       {/* Header fixo - 80px (h-20 = 5rem) */}
