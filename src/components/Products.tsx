@@ -53,7 +53,7 @@ const Products = () => {
     <section id="produtos" className="section-padding relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" 
         style={{ backgroundImage: `url(${bgProducts})` }} 
       />
       <div className="absolute inset-0 bg-muted/75" />
