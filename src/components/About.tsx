@@ -1,4 +1,5 @@
 import { Heart, Eye, Star, Users, Shield, Sparkles, TrendingUp } from 'lucide-react';
+import bgAbout from '@/assets/bg-about.jpg';
 
 const About = () => {
   const values = [
@@ -11,8 +12,15 @@ const About = () => {
   ];
 
   return (
-    <section id="sobre" className="section-padding bg-background">
-      <div className="container-custom">
+    <section id="sobre" className="section-padding relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        style={{ backgroundImage: `url(${bgAbout})` }} 
+      />
+      <div className="absolute inset-0 bg-background/90" />
+      
+      <div className="container-custom relative z-10">
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-heading font-semibold text-foreground mb-4">
