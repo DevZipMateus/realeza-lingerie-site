@@ -27,10 +27,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-md py-2'
-          : 'bg-transparent py-4'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-md ${
+        isScrolled ? 'py-2' : 'py-3'
       }`}
     >
       <div className="container-custom flex items-center justify-between px-4 md:px-8">
@@ -49,9 +47,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium uppercase tracking-wider transition-colors duration-300 link-underline ${
-                isScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-primary'
-              }`}
+              className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 link-underline text-foreground hover:text-primary"
             >
               {link.label}
             </a>
@@ -61,9 +57,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden p-2 transition-colors ${
-            isScrolled ? 'text-foreground' : 'text-white'
-          }`}
+          className="md:hidden p-2 transition-colors text-foreground"
           aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
