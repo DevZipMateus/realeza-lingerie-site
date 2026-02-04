@@ -1,5 +1,4 @@
 import { Heart, Eye, Star, Users, Shield, Sparkles, TrendingUp } from 'lucide-react';
-import aboutImage from '@/assets/about-image.jpg';
 
 const About = () => {
   const values = [
@@ -41,11 +40,14 @@ const About = () => {
             </div>
           </div>
 
-          {/* Store Image */}
+          {/* Store Video */}
           <div className="relative">
-            <img
-              src={aboutImage}
-              alt="Interior da loja Sexy Lingerie Realeza"
+            <video
+              src="/1911318102813163.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="rounded-2xl shadow-lg w-full h-auto object-cover"
             />
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10" />
