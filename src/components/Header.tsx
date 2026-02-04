@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ShoppingBag } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,15 +20,46 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: '#inicio', label: 'Início' },
-    { href: '#sobre', label: 'Sobre' },
-    { href: '#produtos', label: 'Produtos' },
-    { href: '#contato', label: 'Contato' },
+    { href: 'inicio', label: 'Início' },
+    { href: 'sobre', label: 'Sobre' },
+    { href: 'produtos', label: 'Produtos' },
+    { href: 'contato', label: 'Contato' },
   ];
 
-  const handleNavClick = () => {
+  const handleNavClick = (sectionId: string) => {
     setIsMobileMenuOpen(false);
+    
+    if (isHomePage) {
+      // Se estiver na home, apenas rola até a seção
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Se estiver em outra página, navega para a home e depois rola
+      navigate('/', { state: { scrollTo: sectionId } });
+    }
   };
+
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
+
+  // Efeito para rolar até a seção quando vem de outra página
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        const element = document.getElementById(location.state.scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location.state]);
 
   return (
     <header
@@ -34,24 +69,24 @@ const Header = () => {
     >
       <div className="container-custom flex items-center justify-between px-4 md:px-8">
         {/* Logo */}
-        <a href="#inicio" className="flex items-center">
+        <button onClick={handleLogoClick} className="flex items-center">
           <img
             src={logo}
             alt="Sexy Lingerie Realeza - Seu segredo mais feminino"
             className="h-12 md:h-16 w-auto"
           />
-        </a>
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
+              onClick={() => handleNavClick(link.href)}
               className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 link-underline text-foreground hover:text-primary"
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <Link
             to="/vitrine"
@@ -80,18 +115,17 @@ const Header = () => {
       >
         <nav className="flex flex-col py-4">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
-              onClick={handleNavClick}
-              className="px-6 py-3 text-foreground hover:text-primary hover:bg-muted transition-colors text-sm font-medium uppercase tracking-wider"
+              onClick={() => handleNavClick(link.href)}
+              className="px-6 py-3 text-foreground hover:text-primary hover:bg-muted transition-colors text-sm font-medium uppercase tracking-wider text-left"
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <Link
             to="/vitrine"
-            onClick={handleNavClick}
+            onClick={() => setIsMobileMenuOpen(false)}
             className="mx-6 mt-3 btn-primary inline-flex items-center justify-center gap-2 text-sm py-2 px-4"
           >
             <ShoppingBag size={16} />
