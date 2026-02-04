@@ -1,9 +1,12 @@
-import { Heart, Sparkles, Baby, Users, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Heart, Sparkles, Baby, Users, ShoppingBag, ArrowRight, Shirt, HeartHandshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import productLingerie from '@/assets/product-lingerie.jpg';
 import productSensual from '@/assets/product-sensual.jpg';
 import productWellness from '@/assets/product-wellness.jpg';
 import productKids from '@/assets/product-kids.jpg';
+import productMasculino from '@/assets/product-masculino.jpg';
+import productGestante from '@/assets/product-gestante.jpg';
+import productConjuntos from '@/assets/product-conjuntos.jpg';
 
 const Products = () => {
   const categories = [
@@ -31,6 +34,18 @@ const Products = () => {
       items: ['Calcinhas infantis', 'Tops juvenis', 'Conjuntos', 'Acessórios'],
       image: productKids,
     },
+    {
+      icon: Shirt,
+      title: 'Linha masculina',
+      items: ['Cuecas', 'Boxes', 'Kits masculinos', 'Produtos íntimos'],
+      image: productMasculino,
+    },
+    {
+      icon: HeartHandshake,
+      title: 'Linha gestante',
+      items: ['Sutiãs amamentação', 'Calcinhas gestante', 'Shorts', 'Conforto'],
+      image: productGestante,
+    },
   ];
 
   return (
@@ -48,7 +63,7 @@ const Products = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category, index) => (
             <div
               key={index}
