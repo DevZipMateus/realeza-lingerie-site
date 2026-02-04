@@ -56,7 +56,7 @@ const Products = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{ backgroundImage: `url(${bgProducts})` }} 
       />
-      <div className="absolute inset-0 bg-muted/95" />
+      <div className="absolute inset-0 bg-muted/75" />
       
       <div className="container-custom relative z-10">
         {/* Section Title */}

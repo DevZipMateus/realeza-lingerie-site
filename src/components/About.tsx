@@ -18,7 +18,7 @@ const About = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{ backgroundImage: `url(${bgAbout})` }} 
       />
-      <div className="absolute inset-0 bg-background/90" />
+      <div className="absolute inset-0 bg-background/70" />
       
       <div className="container-custom relative z-10">
         {/* Section Title */}
