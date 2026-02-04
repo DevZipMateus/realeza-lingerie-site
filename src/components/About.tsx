@@ -15,7 +15,7 @@ const About = () => {
     <section id="sobre" className="section-padding relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" 
         style={{ backgroundImage: `url(${bgAbout})` }} 
       />
       <div className="absolute inset-0 bg-background/70" />

@@ -45,7 +45,7 @@ const Contact = () => {
     <section id="contato" className="section-padding relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" 
         style={{ backgroundImage: `url(${bgContact})` }} 
       />
       <div className="absolute inset-0 bg-background/65" />

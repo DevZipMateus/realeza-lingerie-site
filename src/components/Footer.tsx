@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" 
         style={{ backgroundImage: `url(${bgFooter})` }} 
       />
       <div className="absolute inset-0 bg-secondary/80" />
