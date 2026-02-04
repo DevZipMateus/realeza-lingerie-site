@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -31,6 +31,12 @@ const Contact = () => {
       label: 'Instagram',
       value: '@sl.lingerieoficial',
       href: 'https://www.instagram.com/sl.lingerieoficial',
+    },
+    {
+      icon: Facebook,
+      label: 'Facebook',
+      value: 'Sexy Lingerie Realeza',
+      href: 'https://www.facebook.com/share/1AGPNqPD2N/',
     },
   ];
 

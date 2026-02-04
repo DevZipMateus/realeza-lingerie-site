@@ -1,4 +1,4 @@
-import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const Footer = () => {
@@ -78,6 +78,15 @@ const Footer = () => {
                   aria-label="Instagram da Sexy Lingerie Realeza"
                 >
                   <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/share/1AGPNqPD2N/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                  aria-label="Facebook da Sexy Lingerie Realeza"
+                >
+                  <Facebook className="w-5 h-5" />
                 </a>
               </li>
             </ul>
