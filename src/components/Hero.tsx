@@ -1,3 +1,5 @@
+import { ShoppingBag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 import heroBg from '@/assets/hero-bg.jpg';
 
@@ -39,9 +41,16 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
+          <Link
+            to="/vitrine"
+            className="btn-primary inline-flex items-center justify-center gap-2"
+          >
+            <ShoppingBag size={20} />
+            Ver Vitrine
+          </Link>
           <a
             href="#produtos"
-            className="btn-primary inline-flex items-center justify-center gap-2"
+            className="btn-outline-light inline-flex items-center justify-center gap-2"
           >
             Conheça nossos produtos
           </a>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 
 const Header = () => {
@@ -52,6 +53,13 @@ const Header = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/vitrine"
+            className="btn-primary inline-flex items-center gap-2 text-sm py-2 px-4"
+          >
+            <ShoppingBag size={16} />
+            Vitrine
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -81,6 +89,14 @@ const Header = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/vitrine"
+            onClick={handleNavClick}
+            className="mx-6 mt-3 btn-primary inline-flex items-center justify-center gap-2 text-sm py-2 px-4"
+          >
+            <ShoppingBag size={16} />
+            Vitrine
+          </Link>
         </nav>
       </div>
     </header>
