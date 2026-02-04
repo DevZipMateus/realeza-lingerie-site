@@ -48,7 +48,7 @@ const Contact = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" 
         style={{ backgroundImage: `url(${bgContact})` }} 
       />
-      <div className="absolute inset-0 bg-background/65" />
+      <div className="absolute inset-0 bg-background/80" />
       
       <div className="container-custom relative z-10">
         {/* Section Title */}
