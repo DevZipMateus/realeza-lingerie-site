@@ -1,5 +1,6 @@
 import { Heart, Sparkles, Baby, Users, ShoppingBag, ArrowRight, Shirt, HeartHandshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import bgProducts from '@/assets/bg-products.jpg';
 import productLingerie from '@/assets/product-lingerie.jpg';
 import productSensual from '@/assets/product-sensual.jpg';
 import productWellness from '@/assets/product-wellness.jpg';
@@ -49,8 +50,15 @@ const Products = () => {
   ];
 
   return (
-    <section id="produtos" className="section-padding bg-muted">
-      <div className="container-custom">
+    <section id="produtos" className="section-padding relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        style={{ backgroundImage: `url(${bgProducts})` }} 
+      />
+      <div className="absolute inset-0 bg-muted/95" />
+      
+      <div className="container-custom relative z-10">
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-heading font-semibold text-foreground mb-4">
