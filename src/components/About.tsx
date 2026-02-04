@@ -41,14 +41,14 @@ const About = () => {
           </div>
 
           {/* Store Video */}
-          <div className="relative">
+          <div className="relative max-w-md mx-auto lg:mx-0">
             <video
               src="/1911318102813163.mp4"
               autoPlay
               loop
               muted
               playsInline
-              className="rounded-2xl shadow-lg w-full h-auto object-cover"
+              className="rounded-2xl shadow-lg w-full h-auto object-cover max-h-[400px]"
             />
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10" />
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl -z-10" />
