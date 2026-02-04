@@ -1,4 +1,5 @@
-import { Heart, Sparkles, Baby, Users } from 'lucide-react';
+import { Heart, Sparkles, Baby, Users, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import productLingerie from '@/assets/product-lingerie.jpg';
 import productSensual from '@/assets/product-sensual.jpg';
 import productWellness from '@/assets/product-wellness.jpg';
@@ -89,6 +90,31 @@ const Products = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Vitrine CTA Banner */}
+        <div className="mt-12 bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10" />
+          <div className="relative z-10">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center">
+                <ShoppingBag className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-heading font-semibold text-white mb-3">
+              Confira nossa Vitrine Online!
+            </h3>
+            <p className="text-white/90 max-w-xl mx-auto mb-6">
+              Explore todos os nossos produtos com preços e detalhes. Encontre a peça perfeita para você!
+            </p>
+            <Link
+              to="/vitrine"
+              className="inline-flex items-center gap-2 bg-white text-primary font-semibold py-3 px-8 rounded-full hover:bg-white/90 transition-all duration-300 hover:scale-105"
+            >
+              Acessar Vitrine
+              <ArrowRight size={20} />
+            </Link>
+          </div>
         </div>
 
         {/* CTA */}
