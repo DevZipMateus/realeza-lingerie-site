@@ -1,20 +1,12 @@
 import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '@/assets/logo.png';
-import bgFooter from '@/assets/bg-footer.jpg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" 
-        style={{ backgroundImage: `url(${bgFooter})` }} 
-      />
-      <div className="absolute inset-0 bg-secondary/80" />
-      
-      <div className="container-custom section-padding pb-8 relative z-10">
+    <footer className="bg-black text-white">
+      <div className="container-custom section-padding pb-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & About */}
           <div className="lg:col-span-2">
