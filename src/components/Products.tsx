@@ -14,7 +14,7 @@ const Products = () => {
     {
       icon: Heart,
       title: 'Lingeries',
-      items: ['Sutiãs', 'Calcinhas', 'Conjuntos', 'Bodies'],
+      items: ['Sutiãs', 'Calcinhas', 'Conjuntos', 'Bodies', 'Plus size'],
       image: productLingerie,
     },
     {
@@ -38,7 +38,7 @@ const Products = () => {
     {
       icon: Shirt,
       title: 'Linha masculina',
-      items: ['Cuecas', 'Boxes', 'Kits masculinos', 'Produtos íntimos'],
+      items: ['Cuecas Boxer', 'Cuecas Slip', 'Kits masculinos', 'Produtos íntimos'],
       image: productMasculino,
     },
     {
